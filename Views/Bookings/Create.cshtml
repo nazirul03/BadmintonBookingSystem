@@ -1,0 +1,18 @@
+﻿@model BadmintonBookingSystemAPI.Models.Booking
+
+<h2>Create New Booking</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="BookCourtNum" class="control-label"></label>
+        <input asp-for="BookCourtNum" class="form-control" />
+        <span asp-validation-for="BookCourtNum" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="BookDuration" class="control-label"></label>
+        <input asp-for="BookDuration" class="form-control" />
+        <span asp-validation-for="BookDuration" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

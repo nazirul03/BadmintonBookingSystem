@@ -1,0 +1,30 @@
+﻿@model IEnumerable<BadmintonBookingSystemAPI.Models.Booking>
+@{
+    ViewData["Title"] = "Booking";
+}
+
+<h2>Bookings List</h2>
+<table class="table bg-success">
+    <thead>
+        <tr>
+            <th>Court Number</th>
+            <th>Duration</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var booking in Model)
+        {
+            <tr>
+                <td>@booking.BookCourtNum</td>
+                <td>@booking.BookDuration</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@booking.BookID" class="text-black">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@booking.BookID" class="text-black">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create" class="text-black">Add New Booking List</a>

@@ -1,0 +1,21 @@
+﻿@model BadmintonBookingSystemAPI.Models.Booking
+
+<h2>Edit Booking</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="BookID" /> <!-- Hidden field to store SubjectID -->
+
+    <div class="form-group">
+        <label asp-for="BookCourtNum" class="control-label"></label>
+        <input asp-for="BookCourtNum" class="form-control" />
+        <span asp-validation-for="BookCourtNum" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="BookDuration" class="control-label"></label>
+        <input asp-for="BookDuration" class="form-control" />
+        <span asp-validation-for="BookDuration" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
